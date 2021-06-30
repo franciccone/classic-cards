@@ -1,28 +1,28 @@
 const products = [
-    {id:1, title:'Paul Gascoigne', price:500, img:'../media/paul-gascoigne.jpg'},
-    {id:2, title:'Diego Maradona', price:500, img:'../media/diego-maradona.webp'},
-    {id:3, title:'Lothar Matthäus', price:500, img:'../media/lothar-matthaus.jfif'},
-    {id:4, title:'Dejan Savićević', price:500, img:'../media/dejan-savicevic.jfif'},
-    {id:5, title:'Carlos Valderrama', price:500, img:'../media/carlos-valderrama.webp'},
-    {id:6, title:'Roger Milla', price:500, img:'../media/roger-milla.jpg'},
-    {id:7, title:'Romario', price:500, img:'../media/romario.jfif'},
-    {id:8, title:'Roberto Baggio', price:500, img:'../media/roberto-baggio.png'},
-    {id:9, title:'Rudi Völler', price:500, img:'../media/rudi-voller.jfif'},
-    {id:10, title:'Hugo Sánchez', price:500, img:'../media/hugo-sanchez.webp'},
-    {id:11, title:'Gabriel Batistuta', price:500, img:'../media/gabriel-batistuta.webp'},
-    {id:12, title:'Hristo Stoichkov', price:500, img:'../media/hristo-stoichkov.webp'},
-    {id:13, title:'Franco Baresi', price:500, img:'../media/franco-baresi.webp'},
-    {id:14, title:'Bebeto', price:500, img:'../media/bebeto.webp'},
-    {id:15, title:'Frank Rijkaard', price:500, img:'../media/frank-rijkaard.webp'},
-    {id:16, title:'Paolo Maldini', price:500, img:'../media/paolo-maldini.jpg'},
-    {id:17, title:'Dennis Bergkamp', price:500, img:'../media/dennis-bergkamp.png'},
-    {id:18, title:'Eric Cantona', price:500, img:'../media/eric-cantona.webp'},
-    {id:19, title:'Tomas Brolin', price:500, img:'../media/tomas-brolin.png'},
-    {id:20, title:'Marco van Basten', price:500, img:'../media/marco-van-basten.jpg'},
-    {id:21, title:'Gheorghe Hagi', price:500, img:'../media/gheorghe-hagi.webp'},
-    {id:22, title:'Andrei Kanchelskis', price:500, img:'../media/andrei-kanchelskis.webp'},
-    {id:23, title:'Michael Laudrup', price:500, img:'../media/michael-laudrup.png'},
-    {id:24, title:'Robert Prosinečki', price:500, img:'../media/robert-prosinecki.jfif'},
+    {id:1, title:'Paul Gascoigne', price:500, value: '1', img:'../media/paul-gascoigne.jpg'},
+    {id:2, title:'Diego Maradona', price:500, value: '2', img:'../media/diego-maradona.webp'},
+    {id:3, title:'Lothar Matthäus', price:500, value: '3', img:'../media/lothar-matthaus.jfif'},
+    {id:4, title:'Dejan Savićević', price:500, value: '4', img:'../media/dejan-savicevic.jfif'},
+    {id:5, title:'Carlos Valderrama', price:500, value: '5', img:'../media/carlos-valderrama.webp'},
+    {id:6, title:'Roger Milla', price:500, value: '6', img:'../media/roger-milla.jpg'},
+    {id:7, title:'Romario', price:500, value: '7', img:'../media/romario.jfif'},
+    {id:8, title:'Roberto Baggio', price:500, value: '8', img:'../media/roberto-baggio.png'},
+    {id:9, title:'Rudi Völler', price:500, value: '9', img:'../media/rudi-voller.jfif'},
+    {id:10, title:'Hugo Sánchez', price:500, value: '10', img:'../media/hugo-sanchez.webp'},
+    {id:11, title:'Gabriel Batistuta', price:500, value: '11', img:'../media/gabriel-batistuta.webp'},
+    {id:12, title:'Hristo Stoichkov', price:500, value: '12', img:'../media/hristo-stoichkov.webp'},
+    {id:13, title:'Franco Baresi', price:500, value: '13', img:'../media/franco-baresi.webp'},
+    {id:14, title:'Bebeto', price:500, value: '14', img:'../media/bebeto.webp'},
+    {id:15, title:'Frank Rijkaard', price:500, value: '15', img:'../media/frank-rijkaard.webp'},
+    {id:16, title:'Paolo Maldini', price:500, value: '16', img:'../media/paolo-maldini.jpg'},
+    {id:17, title:'Dennis Bergkamp', price:500, value: '17', img:'../media/dennis-bergkamp.png'},
+    {id:18, title:'Eric Cantona', price:500, value: '18', img:'../media/eric-cantona.webp'},
+    {id:19, title:'Tomas Brolin', price:500, value: '19', img:'../media/tomas-brolin.png'},
+    {id:20, title:'Marco van Basten', price:500, value: '20', img:'../media/marco-van-basten.jpg'},
+    {id:21, title:'Gheorghe Hagi', price:500, value: '21', img:'../media/gheorghe-hagi.webp'},
+    {id:22, title:'Andrei Kanchelskis', price:500, value: '22', img:'../media/andrei-kanchelskis.webp'},
+    {id:23, title:'Michael Laudrup', price:500, value: '23', img:'../media/michael-laudrup.png'},
+    {id:24, title:'Robert Prosinečki', price:500, value: '24', img:'../media/robert-prosinecki.jfif'},
 ]
 
 const productsContainer = document.querySelector('section.products')
@@ -38,7 +38,7 @@ products.forEach(products => {
             <div class="card-body">
                 <h4 class="card-title">${products.title}</h4>
                 <h5 class="card-text">${products.price}</h5>
-                <button class="btn btn-primary" value='${products.id}'>Buy</button>
+                <button class="btn btn-primary" value="${products.value}">Buy</button>
             </div>
         </article>
     </div>
@@ -48,16 +48,34 @@ products.forEach(products => {
 productsContainer.innerHTML = list;
 
 //Array donde queremos guardar los productos
-
 const cart = [];
 
 function addToCart(buttonId) {
-    console.log(buttonId);
-    console.log(cart);
+console.log(
+    'ID que pasamos como parametro que es el value del boton en este caso: ',
+    buttonId
+);
+console.log('Antes de agregar al carrito: ', cart);
+
+  //Buscamos el producto con el metodo find de los array, la idea es ubicar el producto que tenga un id igual al que le estamso pasando por parametro
+const searchProductsOnDatabase = products.find(
+    products => products.value === buttonId
+);
+
+console.log(
+    'Copia del producto obtenido en la DB, en teoria, el mismo que seleccionamos para agregar: ',
+    searchProductsOnDatabase
+);
+
+  //agregamos el producto al nuevo array
+cart.push(searchProductsOnDatabase);
+console.log('Despues de agregar al carrito: ', cart);
 }
 
-//Buscamos el producto con el metodo find de los array, la idea es ubicar el producto que tenga un id igual al que le estamos pasando por parametro
+//Traemos todos los botones que dicen comprar a traves de su clase
+const btnBuy = document.querySelectorAll('.btn');
 
-const searchProductOnDatabase = products.find(
-    product => product.id === buttonId
-);
+//Hacemos un for each del array que nos trae el querySelectorAll de los botones que tienen clases y le agregamos un evento onclick donde llamamos la funcion addToCart. Si te fijas en el html a cada button le cargue un value que simula el Id del producto por eso utilizo el e.target.value... e.target hace referencia al boton que le estoy dando click y value al value que tiene el button
+btnBuy.forEach(function(btn) {
+btn.addEventListener('click', e => addToCart(e.target.value));
+});
