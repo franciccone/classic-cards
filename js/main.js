@@ -38,7 +38,7 @@ products.forEach(products => {
             <div class="card-body">
                 <h4 class="card-title">${products.title}</h4>
                 <h5 class="card-text">${products.price}</h5>
-                <button class="btn btn-primary">Buy</button>
+                <button class="btn btn-primary" value='${products.id}'>Buy</button>
             </div>
         </article>
     </div>
@@ -46,3 +46,18 @@ products.forEach(products => {
 })
 
 productsContainer.innerHTML = list;
+
+//Array donde queremos guardar los productos
+
+const cart = [];
+
+function addToCart(buttonId) {
+    console.log(buttonId);
+    console.log(cart);
+}
+
+//Buscamos el producto con el metodo find de los array, la idea es ubicar el producto que tenga un id igual al que le estamos pasando por parametro
+
+const searchProductOnDatabase = products.find(
+    product => product.id === buttonId
+);
