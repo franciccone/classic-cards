@@ -1,4 +1,5 @@
 @import "cards";
+@import "colors";
 
 /* --- RESET --- */
 
@@ -16,8 +17,8 @@
 }
 
 .main {
-    margin: 1em;
-    padding: 1em;
+    padding: 2em;
+    background-color: $yellow-crayola-color;
 }
 
 .footer {

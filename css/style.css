@@ -16,6 +16,7 @@
 .card-title, .btn {
   text-transform: uppercase; }
 
+/* ---------- COLORS ---------- */
 /* --- RESET --- */
 * {
   margin: 0;
@@ -29,8 +30,8 @@
   margin: 0 0 1em 0; }
 
 .main {
-  margin: 1em;
-  padding: 1em; }
+  padding: 2em;
+  background-color: #FFED80; }
 
 .footer {
   margin: 1em 0 0 0; }
