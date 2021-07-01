@@ -1,0 +1,22 @@
+/* --- CARDS --- */
+
+.card {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin: 1em 0;
+}
+
+.card-image {
+    min-height: 400px;
+    max-height: 400px;
+    transition: transform .2s;
+}
+
+.card-image:hover {
+    transform: scale(1.1);
+}
+
+.card-title, .btn {
+    text-transform: uppercase;
+}

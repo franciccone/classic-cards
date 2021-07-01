@@ -1,0 +1,23 @@
+{
+  "name": "panini",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciccone/panini-commerce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franciccone/panini-commerce/issues"
+  },
+  "homepage": "https://github.com/franciccone/panini-commerce#readme",
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.9"
+  }
+}
