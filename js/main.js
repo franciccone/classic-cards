@@ -1,28 +1,28 @@
 const products = [
-    {id:1, title:'Paul Gascoigne', price:500, value: '1', img:'../media/paul-gascoigne.webp'},
-    {id:2, title:'Diego Maradona', price:500, value: '2', img:'../media/diego-maradona.webp'},
-    {id:3, title:'Lothar Matthäus', price:500, value: '3', img:'../media/lothar-matthaus.webp'},
-    {id:4, title:'Dejan Savićević', price:500, value: '4', img:'../media/dejan-savicevic.webp'},
-    {id:5, title:'Carlos Valderrama', price:500, value: '5', img:'../media/carlos-valderrama.webp'},
-    {id:6, title:'Roger Milla', price:500, value: '6', img:'../media/roger-milla.webp'},
-    {id:7, title:'Romario', price:500, value: '7', img:'../media/romario.jfif'},
-    {id:8, title:'Roberto Baggio', price:500, value: '8', img:'../media/roberto-baggio.webp'},
-    {id:9, title:'Rudi Völler', price:500, value: '9', img:'../media/rudi-voller.jfif'},
-    {id:10, title:'Hugo Sánchez', price:500, value: '10', img:'../media/hugo-sanchez.webp'},
-    {id:11, title:'Gabriel Batistuta', price:500, value: '11', img:'../media/gabriel-batistuta.webp'},
-    {id:12, title:'Hristo Stoichkov', price:500, value: '12', img:'../media/hristo-stoichkov.webp'},
-    {id:13, title:'Franco Baresi', price:500, value: '13', img:'../media/franco-baresi.webp'},
-    {id:14, title:'Bebeto', price:500, value: '14', img:'../media/bebeto.webp'},
-    {id:15, title:'Frank Rijkaard', price:500, value: '15', img:'../media/frank-rijkaard.webp'},
-    {id:16, title:'Paolo Maldini', price:500, value: '16', img:'../media/paolo-maldini.webp'},
-    {id:17, title:'Dennis Bergkamp', price:500, value: '17', img:'../media/dennis-bergkamp.webp'},
-    {id:18, title:'Eric Cantona', price:500, value: '18', img:'../media/eric-cantona.webp'},
-    {id:19, title:'Tomas Brolin', price:500, value: '19', img:'../media/tomas-brolin.png'},
-    {id:20, title:'Marco van Basten', price:500, value: '20', img:'../media/marco-van-basten.webp'},
-    {id:21, title:'Gheorghe Hagi', price:500, value: '21', img:'../media/gheorghe-hagi.webp'},
-    {id:22, title:'Andrei Kanchelskis', price:500, value: '22', img:'../media/andrei-kanchelskis.webp'},
-    {id:23, title:'Michael Laudrup', price:500, value: '23', img:'../media/michael-laudrup.webp'},
-    {id:24, title:'Robert Prosinečki', price:500, value: '24', img:'../media/robert-prosinecki.webp'},
+    {id:1, title:'Paul Gascoigne', price:500, value: '1', img:'./media/paul-gascoigne.webp'},
+    {id:2, title:'Diego Maradona', price:500, value: '2', img:'./media/diego-maradona.webp'},
+    {id:3, title:'Lothar Matthäus', price:500, value: '3', img:'./media/lothar-matthaus.webp'},
+    {id:4, title:'Dejan Savićević', price:500, value: '4', img:'./media/dejan-savicevic.webp'},
+    {id:5, title:'Carlos Valderrama', price:500, value: '5', img:'./media/carlos-valderrama.webp'},
+    {id:6, title:'Roger Milla', price:500, value: '6', img:'./media/roger-milla.webp'},
+    {id:7, title:'Romario', price:500, value: '7', img:'./media/romario.jfif'},
+    {id:8, title:'Roberto Baggio', price:500, value: '8', img:'./media/roberto-baggio.webp'},
+    {id:9, title:'Rudi Völler', price:500, value: '9', img:'./media/rudi-voller.jfif'},
+    {id:10, title:'Hugo Sánchez', price:500, value: '10', img:'./media/hugo-sanchez.webp'},
+    {id:11, title:'Gabriel Batistuta', price:500, value: '11', img:'./media/gabriel-batistuta.webp'},
+    {id:12, title:'Hristo Stoichkov', price:500, value: '12', img:'./media/hristo-stoichkov.webp'},
+    {id:13, title:'Franco Baresi', price:500, value: '13', img:'./media/franco-baresi.webp'},
+    {id:14, title:'Bebeto', price:500, value: '14', img:'./media/bebeto.webp'},
+    {id:15, title:'Frank Rijkaard', price:500, value: '15', img:'./media/frank-rijkaard.webp'},
+    {id:16, title:'Paolo Maldini', price:500, value: '16', img:'./media/paolo-maldini.webp'},
+    {id:17, title:'Dennis Bergkamp', price:500, value: '17', img:'./media/dennis-bergkamp.webp'},
+    {id:18, title:'Eric Cantona', price:500, value: '18', img:'./media/eric-cantona.webp'},
+    {id:19, title:'Tomas Brolin', price:500, value: '19', img:'./media/tomas-brolin.png'},
+    {id:20, title:'Marco van Basten', price:500, value: '20', img:'./media/marco-van-basten.webp'},
+    {id:21, title:'Gheorghe Hagi', price:500, value: '21', img:'./media/gheorghe-hagi.webp'},
+    {id:22, title:'Andrei Kanchelskis', price:500, value: '22', img:'./media/andrei-kanchelskis.webp'},
+    {id:23, title:'Michael Laudrup', price:500, value: '23', img:'./media/michael-laudrup.webp'},
+    {id:24, title:'Robert Prosinečki', price:500, value: '24', img:'./media/robert-prosinecki.webp'},
 ]
 
 const productsContainer = document.querySelector('section.products')
@@ -57,7 +57,7 @@ console.log(
 );
 console.log('Antes de agregar al carrito: ', cart);
 
-  //Buscamos el producto con el metodo find de los array, la idea es ubicar el producto que tenga un id igual al que le estamso pasando por parametro
+//Buscamos el producto con el metodo find de los array, la idea es ubicar el producto que tenga un id igual al que le estamso pasando por parametro
 const searchProductsOnDatabase = products.find(
     products => products.value === buttonId
 );
@@ -67,7 +67,7 @@ console.log(
     searchProductsOnDatabase
 );
 
-  //agregamos el producto al nuevo array
+//agregamos el producto al nuevo array
 cart.push(searchProductsOnDatabase);
 console.log('Despues de agregar al carrito: ', cart);
 }
