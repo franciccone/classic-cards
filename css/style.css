@@ -7,8 +7,10 @@
 
 .card-image {
   min-height: 400px;
-  max-height: 400px;
   transition: transform .2s; }
+
+.card-image-small {
+  max-height: 400px; }
 
 .card-image:hover {
   transform: scale(1.1); }
