@@ -1,6 +1,6 @@
 /* --- CARDS --- */
 .card {
-  width: 80%;
+  width: 100%;
   height: auto;
   text-align: center;
   margin: 1em 0; }
@@ -20,6 +20,10 @@
   font-size: 1.3rem; }
 
 /* ---------- COLORS ---------- */
+@media only screen and (min-width: 992px) {
+  .main {
+    padding: 2em 10em; } }
+
 /* --- RESET --- */
 * {
   margin: 0;
@@ -33,8 +37,9 @@
   margin: 0 0 1em 0; }
 
 .main {
-  padding: 2em;
-  background-image: url("../media/white-yellow-background.webp"); }
+  padding: 2em 5em;
+  background: url(../media/white-yellow-background.webp);
+  text-align: center; }
 
 .footer {
   margin: 1em 0 0 0; }

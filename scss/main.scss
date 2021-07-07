@@ -1,5 +1,6 @@
 @import "cards";
 @import "colors";
+@import "mediaqueries";
 
 /* --- RESET --- */
 
@@ -17,8 +18,9 @@
 }
 
 .main {
-    padding: 2em;
-    background-image: url("../media/white-yellow-background.webp");
+    padding: 2em 5em;
+    background: url(../media/white-yellow-background.webp);
+    text-align: center;
 }
 
 .footer {
