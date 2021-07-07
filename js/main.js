@@ -2,7 +2,7 @@ const products = [
     {id:1, title:'Gascoigne', price:500, value: '1', img:'./media/paul-gascoigne.webp'},
     {id:2, title:'Maradona', price:500, value: '2', img:'./media/diego-maradona.webp'},
     {id:3, title:'Matthäus', price:500, value: '3', img:'./media/lothar-matthaus.webp'},
-    {id:4, title:'Savićević', price:500, value: '4', img:'./media/dejan-savicevic.webp'},
+    {id:4, title:'Savicevic', price:500, value: '4', img:'./media/dejan-savicevic.webp'},
     {id:5, title:'Valderrama', price:500, value: '5', img:'./media/carlos-valderrama.webp'},
     {id:6, title:'Milla', price:500, value: '6', img:'./media/roger-milla.webp'},
     {id:7, title:'Romario', price:500, value: '7', img:'./media/romario.webp'},
@@ -22,7 +22,7 @@ const products = [
     {id:21, title:'Hagi', price:500, value: '21', img:'./media/gheorghe-hagi.webp'},
     {id:22, title:'Kanchelskis', price:500, value: '22', img:'./media/andrei-kanchelskis.webp'},
     {id:23, title:'Laudrup', price:500, value: '23', img:'./media/michael-laudrup.webp'},
-    {id:24, title:'Prosinečki', price:500, value: '24', img:'./media/robert-prosinecki.webp'},
+    {id:24, title:'Prosinecki', price:500, value: '24', img:'./media/robert-prosinecki.webp'},
 ]
 
 const productsContainer = document.querySelector('section.products')

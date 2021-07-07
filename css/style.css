@@ -1,4 +1,5 @@
 /* --- CARDS --- */
+@import url("https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700&family=Viga&display=swap");
 .card {
   width: 100%;
   height: auto;
@@ -17,9 +18,23 @@
 
 .card-title, .card-text, .btn {
   text-transform: uppercase;
+  font-family: 'Viga', sans-serif;
   font-size: 1.3rem; }
 
 /* ---------- COLORS ---------- */
+/* ---------- HEADER ---------- */
+.navbar {
+  font-family: 'Passion One', cursive;
+  background-color: #FFED80; }
+
+.navbar-brand {
+  font-size: 2rem !important;
+  color: #000000; }
+
+.navbar-brand:hover {
+  color: #FFF9D5; }
+
+/* ---------- MEDIA QUERIES ---------- */
 @media only screen and (min-width: 992px) {
   .main {
     padding: 2em 10em; } }
@@ -32,9 +47,6 @@
   text-decoration: none;
   list-style-type: none;
   box-sizing: border-box; }
-
-.header {
-  margin: 0 0 1em 0; }
 
 .main {
   padding: 2em 5em;

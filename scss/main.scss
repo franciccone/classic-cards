@@ -1,6 +1,8 @@
 @import "cards";
 @import "colors";
+@import "header";
 @import "mediaqueries";
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700&family=Viga&display=swap');
 
 /* --- RESET --- */
 
@@ -11,10 +13,6 @@
     text-decoration: none;
     list-style-type: none;
     box-sizing: border-box;
-}
-
-.header {
-    margin: 0 0 1em 0;
 }
 
 .main {

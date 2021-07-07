@@ -1,0 +1,15 @@
+/* ---------- HEADER ---------- */
+
+.navbar {
+    font-family: 'Passion One', cursive;
+    background-color: $yellow-crayola-color;
+}
+
+.navbar-brand {
+    font-size: 2rem !important;
+    color: $black-color;
+}
+
+.navbar-brand:hover {
+    color: $light-goldenrow-yellow-color;
+}
