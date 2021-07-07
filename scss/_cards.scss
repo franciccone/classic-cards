@@ -1,25 +1,26 @@
 /* --- CARDS --- */
 
 .card {
-    width: 100%;
+    width: 80%;
     height: auto;
     text-align: center;
     margin: 1em 0;
 }
 
 .card-image {
-    min-height: 400px;
+    min-height: 220px;
     transition: transform .2s;
 }
 
 .card-image-small {
-    max-height: 400px;
+    max-height: 220px;
 }
 
 .card-image:hover {
     transform: scale(1.1);
 }
 
-.card-title, .btn {
+.card-title, .card-text, .btn {
     text-transform: uppercase;
+    font-size: 1.3rem;
 }
