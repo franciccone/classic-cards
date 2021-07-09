@@ -1,5 +1,6 @@
 @import "cards";
 @import "colors";
+@import "footer";
 @import "header";
 @import "mediaqueries";
 @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700&family=Viga&display=swap');
@@ -19,8 +20,4 @@
     padding: 2em 5em;
     background: url(../media/white-yellow-background.webp);
     text-align: center;
-}
-
-.footer {
-    margin: 1em 0 0 0;
 }
