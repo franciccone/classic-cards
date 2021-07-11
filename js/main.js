@@ -1,3 +1,5 @@
+// Variable with all the products
+
 const products = [
     {id:1, title:'Gascoigne', price:500, value: '1', img:'./media/paul-gascoigne.webp'},
     {id:2, title:'Maradona', price:500, value: '2', img:'./media/diego-maradona.webp'},
@@ -25,6 +27,8 @@ const products = [
     {id:24, title:'Prosinecki', price:500, value: '24', img:'./media/robert-prosinecki.webp'},
 ]
 
+// I add the products to the HTML
+
 const productsContainer = document.querySelector('section.products')
 console.log(productsContainer)
 
@@ -38,7 +42,7 @@ products.forEach(products => {
             <div class="card-body">
                 <h4 class="card-title">${products.title}</h4>
                 <h5 class="card-text">${products.price}</h5>
-                <button class="btn btn-primary" value="${products.value}">Buy</button>
+                <button class="btn btn-warning" value="${products.value}">Buy</button>
             </div>
         </article>
     </div>
@@ -51,25 +55,25 @@ productsContainer.innerHTML = list;
 const cart = [];
 
 function addToCart(buttonId) {
-console.log(
-    'ID que pasamos como parametro que es el value del boton en este caso: ',
-    buttonId
-);
-console.log('Antes de agregar al carrito: ', cart);
+// console.log(
+//     'ID que pasamos como parametro que es el value del boton en este caso: ',
+//     buttonId
+// );
+// console.log('Antes de agregar al carrito: ', cart);
 
 //Buscamos el producto con el metodo find de los array, la idea es ubicar el producto que tenga un id igual al que le estamos pasando por parametro
 const searchProductsOnDatabase = products.find(
     products => products.value === buttonId
 );
 
-console.log(
-    'Copia del producto obtenido en la DB, en teoria, el mismo que seleccionamos para agregar: ',
-    searchProductsOnDatabase
-);
+// console.log(
+//     'Copia del producto obtenido en la DB, en teoria, el mismo que seleccionamos para agregar: ',
+//     searchProductsOnDatabase
+// );
 
 //agregamos el producto al nuevo array
 cart.push(searchProductsOnDatabase);
-console.log('Despues de agregar al carrito: ', cart);
+// console.log('Despues de agregar al carrito: ', cart);
 }
 
 //Traemos todos los botones que dicen comprar a traves de su clase
