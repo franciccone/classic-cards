@@ -1,3 +1,4 @@
+/* ---------- MEDIA QUERIES ---------- */
 /* --- CARDS --- */
 @import url("https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700&family=Viga&display=swap");
 .card {
@@ -7,20 +8,19 @@
   margin: 1em 0; }
 
 .card-image {
-  min-height: 220px;
   transition: transform .2s; }
-
-.card-image-small {
-  max-height: 220px; }
 
 .card-image:hover {
   transform: scale(1.1); }
 
 .card-image-cart {
-  width: 10%;
+  width: 50%;
   height: auto;
   text-align: center;
   margin: 0 1em; }
+  @media only screen and (min-width: 768px) {
+    .card-image-cart {
+      width: 10%; } }
 
 .card-title, .card-text, .btn {
   text-transform: uppercase;
@@ -48,7 +48,6 @@ footer {
 .navbar-brand:hover {
   color: #FFF9D5; }
 
-/* ---------- MEDIA QUERIES ---------- */
 /* --- RESET --- */
 * {
   margin: 0;

@@ -8,12 +8,7 @@
 }
 
 .card-image {
-    min-height: 220px;
     transition: transform .2s;
-}
-
-.card-image-small {
-    max-height: 220px;
 }
 
 .card-image:hover {
@@ -21,10 +16,13 @@
 }
 
 .card-image-cart {
-    width: 10%;
+    width: 50%;
     height: auto;
     text-align: center;
     margin: 0 1em;
+    @include tablet {
+        width: 10%;
+    }
 }
 
 .card-title, .card-text, .btn {
