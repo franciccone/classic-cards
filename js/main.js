@@ -77,40 +77,59 @@ function addToCartClicked(event) {
     addToCart(itemTitle, itemPrice, itemImg);
 }
 
-// Función para agregar productos al carrito
+// Function used to add the selected cards to the cart
 
 function addToCart(itemTitle, itemPrice, itemImg) {
 
-const shoppingCartRow = document.createElement('div');
-const shoppingCartContent = `
-    <div class="row products">
-        <div class="col-6">
-            <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                <img src=${itemImg} class="card-image-cart">
-                <h6 class="title-products shoppingCartItemTitle text-truncate ml-3 mb-0">${itemTitle}</h6>
-            </div>
-        </div>
-        <div class="col-2">
-            <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                <p class="price-products mb-0 shoppingCartItemPrice">${itemPrice}</p>
-            </div>
-        </div>
-        <div class="col-4">
-            <div
-                class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
-                <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
-                    value="1">
-                <button class="btn btn-danger buttonDelete" type="button">X</button>
-            </div>
-        </div>
-    </div>`;
+    const elementsTitle = shoppingCartItemsContainer.getElementsByClassName('shoppingCartItemTitle')
 
-shoppingCartRow.innerHTML = shoppingCartContent;
-shoppingCartItemsContainer.append(shoppingCartRow);
+    // Avoid duplicated products with this for
 
-updateShoppingCartTotal();
+    for(let i = 0; i < elementsTitle.length; i++) {
+        if (elementsTitle[i].innerText === itemTitle) {
+            let elementQuantity = elementsTitle[i].parentElement.parentElement.parentElement.querySelector('.shoppingCartItemQuantity');
+        elementQuantity.value++;
+        $('.toast').toast('show');
+        updateShoppingCartTotal();
+        return;
+        }
+    }
 
+    const shoppingCartRow = document.createElement('div');
+    const shoppingCartContent = `
+        <div class="row products">
+            <div class="col-6">
+                <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                    <img src=${itemImg} class="card-image-cart">
+                    <h6 class="title-cards shoppingCartItemTitle text-truncate ml-3 mb-0">${itemTitle}</h6>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                    <p class="price-cards mb-0 shoppingCartItemPrice">${itemPrice}</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div
+                    class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
+                    <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
+                        value="1">
+                    <button class="btn btn-danger buttonDelete" type="button">X</button>
+                </div>
+            </div>
+        </div>`;
+
+    shoppingCartRow.innerHTML = shoppingCartContent;
+    shoppingCartItemsContainer.append(shoppingCartRow);
+
+    shoppingCartRow.querySelector('.buttonDelete').addEventListener('click', removeShoppingCartItem);
+
+    shoppingCartRow.querySelector('.shoppingCartItemQuantity').addEventListener('change', quantityChanged);
+
+    updateShoppingCartTotal();
 }
+
+// Function used to get the total price in the cart
 
 function updateShoppingCartTotal() {
     let total = 0;
@@ -127,4 +146,22 @@ function updateShoppingCartTotal() {
     })
 
     shoppingCartTotal.innerHTML = `${total}`;
+}
+
+// Function used to delete one cart element
+
+function removeShoppingCartItem(event) {
+    const buttonClicked = event.target;
+    buttonClicked.closest('.products').remove();
+    updateShoppingCartTotal();
+}
+
+// Function used to change the amount of one cart element
+
+function quantityChanged(event) {
+    const input = event.target;
+    if (input.value <= 0) {
+        input.value = 1;
+    }
+    updateShoppingCartTotal();
 }
