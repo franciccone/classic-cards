@@ -20,4 +20,7 @@
     padding: 2em 5em;
     background: url(../media/white-yellow-background.webp);
     text-align: center;
+    @include desktop {
+        padding: 2em 10em;
+    }
 }

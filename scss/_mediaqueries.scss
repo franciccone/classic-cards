@@ -1,7 +1,25 @@
 /* ---------- MEDIA QUERIES ---------- */
 
-@media only screen and (min-width: 992px) {
-    .main {
-        padding: 2em 10em;
+@mixin pixel2 {
+    @media only screen and (max-width: 411px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media only screen and (min-width: 1200px) {
+        @content;
     }
 }

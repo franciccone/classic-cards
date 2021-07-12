@@ -29,8 +29,7 @@ const products = [
 
 // I add the products to the HTML
 
-const productsContainer = document.querySelector('section.products')
-console.log(productsContainer)
+const productsContainer = document.querySelector('section.products');
 
 let list = '';
 
@@ -42,44 +41,90 @@ products.forEach(products => {
             <div class="card-body">
                 <h4 class="card-title">${products.title}</h4>
                 <h5 class="card-text">${products.price}</h5>
-                <button class="btn btn-warning" value="${products.value}">Buy</button>
+                <button class="btn btn-warning">Buy</button>
             </div>
         </article>
     </div>
     `;
-})
+});
 
 productsContainer.innerHTML = list;
 
-//Array donde queremos guardar los productos
-const cart = [];
+// Now I call all buttons
 
-function addToCart(buttonId) {
-// console.log(
-//     'ID que pasamos como parametro que es el value del boton en este caso: ',
-//     buttonId
-// );
-// console.log('Antes de agregar al carrito: ', cart);
+const addToShoppingCartButtons = document.querySelectorAll('.btn');
 
-//Buscamos el producto con el metodo find de los array, la idea es ubicar el producto que tenga un id igual al que le estamos pasando por parametro
-const searchProductsOnDatabase = products.find(
-    products => products.value === buttonId
-);
+// I show to JS where I'm going to put everything I will do on the HTML with a global variable
 
-// console.log(
-//     'Copia del producto obtenido en la DB, en teoria, el mismo que seleccionamos para agregar: ',
-//     searchProductsOnDatabase
-// );
+const shoppingCartItemsContainer = document.querySelector('.shopping-cart')
 
-//agregamos el producto al nuevo array
-cart.push(searchProductsOnDatabase);
-// console.log('Despues de agregar al carrito: ', cart);
+// With a forEach with an Arrow Function I set a click event for every button
+
+addToShoppingCartButtons.forEach(addToCartButton => {
+    addToCartButton.addEventListener('click', addToCartClicked);
+});
+
+// I made a function called addToCartClicked with an event as a parameter + I added variables to get the products data
+
+function addToCartClicked(event) {
+    const button = event.target;
+    const item = button.closest('.products');
+
+    const itemTitle = item.querySelector('.card-title').textContent;
+    const itemPrice = item.querySelector('.card-text').textContent;
+    const itemImg = item.querySelector('.card-image').src;
+
+    addToCart(itemTitle, itemPrice, itemImg);
 }
 
-//Traemos todos los botones que dicen comprar a traves de su clase
-const btnBuy = document.querySelectorAll('.btn');
+// Función para agregar productos al carrito
 
-//Hacemos un for each del array que nos trae el querySelectorAll de los botones que tienen clases y le agregamos un evento onclick donde llamamos la funcion addToCart. Si te fijas en el html a cada button le cargue un value que simula el Id del producto por eso utilizo el e.target.value... e.target hace referencia al boton que le estoy dando click y value al value que tiene el button
-btnBuy.forEach(function(btn) {
-btn.addEventListener('click', e => addToCart(e.target.value));
-});
+function addToCart(itemTitle, itemPrice, itemImg) {
+
+const shoppingCartRow = document.createElement('div');
+const shoppingCartContent = `
+    <div class="row products">
+        <div class="col-6">
+            <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                <img src=${itemImg} class="card-image-cart">
+                <h6 class="title-products shoppingCartItemTitle text-truncate ml-3 mb-0">${itemTitle}</h6>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                <p class="price-products mb-0 shoppingCartItemPrice">${itemPrice}</p>
+            </div>
+        </div>
+        <div class="col-4">
+            <div
+                class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
+                <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
+                    value="1">
+                <button class="btn btn-danger buttonDelete" type="button">X</button>
+            </div>
+        </div>
+    </div>`;
+
+shoppingCartRow.innerHTML = shoppingCartContent;
+shoppingCartItemsContainer.append(shoppingCartRow);
+
+updateShoppingCartTotal();
+
+}
+
+function updateShoppingCartTotal() {
+    let total = 0;
+    const shoppingCartTotal = document.querySelector('.shoppingCartTotal')
+
+    const shoppingCartItems = document.querySelectorAll('.shoppingCartItem')
+
+    shoppingCartItems.forEach(shoppingCartItem => {
+        const shoppingCartItemPriceElement = shoppingCartItem.querySelector('.shoppingCartItemPrice');
+        const shoppingCartItemPrice = Number(shoppingCartItemPriceElement.textContent.replace('$','' ));
+        const shoppingCartItemQuantityElement = shoppingCartItem.querySelector('.shoppingCartItemQuantity');
+        const shoppingCartItemQuantity = Number(shoppingCartItemQuantityElement.value);
+        total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
+    })
+
+    shoppingCartTotal.innerHTML = `${total}`;
+}
