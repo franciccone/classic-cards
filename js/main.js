@@ -64,6 +64,11 @@ addToShoppingCartButtons.forEach(addToCartButton => {
     addToCartButton.addEventListener('click', addToCartClicked);
 });
 
+// SELECCIONO EL BOTÓN COMPRAR Y LE AGREGO UN EVENTO PARA QUE APAREZCA UN MODAL DE BOOTSTRAP AVISÁNDOLE AL USUARIO QUE LA TRANSACCIÓN FUE EXITOSA
+
+const buyButton = document.querySelector('.buyButton');
+buyButton.addEventListener('click', buyButtonClicked);
+
 // I made a function called addToCartClicked with an event as a parameter + I added variables to get the products data
 
 function addToCartClicked(event) {
@@ -163,5 +168,12 @@ function quantityChanged(event) {
     if (input.value <= 0) {
         input.value = 1;
     }
+    updateShoppingCartTotal();
+}
+
+// Function used to delete the cart content when the user finish the buy
+
+function buyButtonClicked() {
+    shoppingCartItemsContainer.innerHTML = '';
     updateShoppingCartTotal();
 }

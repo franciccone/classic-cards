@@ -5,13 +5,11 @@
   width: 100%;
   height: auto;
   text-align: center;
-  margin: 1em 0; }
+  margin: 1em 0;
+  transition: box-shadow .3s; }
 
-.card-image {
-  transition: transform .2s; }
-
-.card-image:hover {
-  transform: scale(1.1); }
+.card:hover {
+  box-shadow: 0 0 16px rgba(33, 33, 33, 0.2); }
 
 .card-image-cart {
   width: 50%;
