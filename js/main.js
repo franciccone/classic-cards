@@ -1,4 +1,4 @@
-// Variable with all the products
+// Variable with all products
 
 const products = [
     {id:1, title:'Gascoigne', price:500, value: '1', img:'./media/paul-gascoigne.webp'},
@@ -37,7 +37,7 @@ products.forEach(products => {
     list += `
     <div class="col-sm-6 col-md-4 col-lg-3">
         <article class='card products products-${products.id}'>
-            <img src="${products.img}" class="card-img-top card-image" alt="${products.title}"">
+            <img src="${products.img}" class="card-img-top card-image" alt="${products.title}">
             <div class="card-body">
                 <h4 class="card-title">${products.title}</h4>
                 <h5 class="card-text">${products.price}</h5>
@@ -64,7 +64,7 @@ addToShoppingCartButtons.forEach(addToCartButton => {
     addToCartButton.addEventListener('click', addToCartClicked);
 });
 
-// SELECCIONO EL BOTÓN COMPRAR Y LE AGREGO UN EVENTO PARA QUE APAREZCA UN MODAL DE BOOTSTRAP AVISÁNDOLE AL USUARIO QUE LA TRANSACCIÓN FUE EXITOSA
+// I call the .buyButton and I add an event to show a Bootstrap modal
 
 const buyButton = document.querySelector('.buyButton');
 buyButton.addEventListener('click', buyButtonClicked);
