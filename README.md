@@ -4,9 +4,9 @@
 
 ## Description
 
-This Website is a fictional E-Commerce project made wherre you can found classic Panini football cards from the early '90s.
+This Website is an E-Commerce project made where you can found classic Panini football cards from the early '90s.
 
-You can found great players like Diego Maradona, Paul Gascoigne, Marco van Basten or Romario, among others.
+You can see great players like Diego Maradona, Paul Gascoigne, Marco van Basten or Romario, among others.
 
 <b>Technologies used:</b>
 
