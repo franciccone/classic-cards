@@ -27,4 +27,4 @@ Live Preview: [See](https://franciccone.github.io/classic-cards/)
 
 ## Author
 
-[Francisco Ciccone](https://github.com/franciccone)
+[Francisco Ciccone](https://franciccone.github.io/portfolio/)
